@@ -11,6 +11,7 @@ use warnings;
 use Digest::BLAKE2 qw (blake2b_hex);
 
 sub module_constraints { [[0, 256], [-1, -1], [0, 64], [-1, -1], [-1, -1]] }
+#sub module_constraints { [[0, 128], [-1, -1], [0, 32], [-1, -1], [-1, -1]] }
 
 sub module_generate_hash
 {

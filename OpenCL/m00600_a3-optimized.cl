@@ -74,7 +74,7 @@ DECLSPEC void m00600m (PRIVATE_AS u32 *w, const u32 pw_len, KERN_ATTR_FUNC_VECTO
 
     u64x h[8];
 
-    h[0] = BLAKE2B_IV_00 ^ 0x01010040;
+    h[0] = BLAKE2B_IV_00 ^ 0x01010020;
     h[1] = BLAKE2B_IV_01;
     h[2] = BLAKE2B_IV_02;
     h[3] = BLAKE2B_IV_03;
@@ -166,7 +166,7 @@ DECLSPEC void m00600s (PRIVATE_AS u32 *w, const u32 pw_len, KERN_ATTR_FUNC_VECTO
 
     u64x h[8];
 
-    h[0] = BLAKE2B_IV_00 ^ 0x01010040;
+    h[0] = BLAKE2B_IV_00 ^ 0x01010020;
     h[1] = BLAKE2B_IV_01;
     h[2] = BLAKE2B_IV_02;
     h[3] = BLAKE2B_IV_03;

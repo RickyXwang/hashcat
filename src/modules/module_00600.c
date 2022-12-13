@@ -15,7 +15,7 @@ static const u32   DGST_POS0      = 1;
 static const u32   DGST_POS1      = 0;
 static const u32   DGST_POS2      = 3;
 static const u32   DGST_POS3      = 2;
-static const u32   DGST_SIZE      = DGST_SIZE_8_8;
+static const u32   DGST_SIZE      = DGST_SIZE_8_8; // change from DGST_SIZE_8_8 to DGST_SIZE_8_4
 static const u32   HASH_CATEGORY  = HASH_CATEGORY_RAW_HASH;
 static const char *HASH_NAME      = "BLAKE2b-512";
 static const u64   KERN_TYPE      = 600;
@@ -26,7 +26,8 @@ static const u64   OPTS_TYPE      = OPTS_TYPE_STOCK_MODULE
                                   | OPTS_TYPE_PT_GENERATE_LE;
 static const u32   SALT_TYPE      = SALT_TYPE_NONE;
 static const char *ST_PASS        = "hashcat";
-static const char *ST_HASH        = "$BLAKE2$296c269e70ac5f0095e6fb47693480f0f7b97ccd0307f5c3bfa4df8f5ca5c9308a0e7108e80a0a9c0ebb715e8b7109b072046c6cd5e155b4cfd2f27216283b1e";
+//static const char *ST_HASH        = "$BLAKE2$296c269e70ac5f0095e6fb47693480f0f7b97ccd0307f5c3bfa4df8f5ca5c9308a0e7108e80a0a9c0ebb715e8b7109b072046c6cd5e155b4cfd2f27216283b1e";
+static const char *ST_HASH        = "$BLAKE2$68b163391b3e779dcddba4e6d8fa03e962c29569b430efa5ba014303358557e1";
 
 u32         module_attack_exec    (MAYBE_UNUSED const hashconfig_t *hashconfig, MAYBE_UNUSED const user_options_t *user_options, MAYBE_UNUSED const user_options_extra_t *user_options_extra) { return ATTACK_EXEC;     }
 u32         module_dgst_pos0      (MAYBE_UNUSED const hashconfig_t *hashconfig, MAYBE_UNUSED const user_options_t *user_options, MAYBE_UNUSED const user_options_extra_t *user_options_extra) { return DGST_POS0;       }
@@ -60,7 +61,7 @@ int module_hash_decode (MAYBE_UNUSED const hashconfig_t *hashconfig, MAYBE_UNUSE
   token.attr[0] = TOKEN_ATTR_FIXED_LENGTH
                 | TOKEN_ATTR_VERIFY_SIGNATURE;
 
-  token.len[1]  = 128;
+  token.len[1]  = 64; // change to 64 from 128
   token.attr[1] = TOKEN_ATTR_FIXED_LENGTH
                 | TOKEN_ATTR_VERIFY_HEX;
 
